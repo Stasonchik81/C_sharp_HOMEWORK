@@ -11,13 +11,20 @@ if (num < 100)
     Console.WriteLine("Третьей цифры нет");
     return;
 }
-while (num > 1000)
-{
-    num /=10;
-}
+num = get3Dig(num);
 Console.WriteLine(getThirdDigit(num));
+
 
 int getThirdDigit(int num)
 {
     return num % 10;
+}
+
+int get3Dig(int num)
+{
+    while (num>=1000)
+    {
+        num /= 10;
+    }
+    return num;
 }
