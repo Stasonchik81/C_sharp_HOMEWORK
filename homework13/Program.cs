@@ -9,7 +9,7 @@ Console.Write("Введите номер дня недели: ");
 
 int num = Convert.ToInt32(Console.ReadLine());
 
-if (num > 0 && num < 7)
+if (num > 0 && num <= 7)
 {
     Console.WriteLine($"Сегодня {days[num - 1]}!");
     if(num == 6 || num == 7)Console.WriteLine("Сегодня выходной!");
