@@ -8,11 +8,19 @@ Console.Write("Основание: ");
 int numberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Степень: ");
 int powB = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"основание - {numberA}, степень - {powB}, result: {Pow(numberA, powB)}");
-int Pow (int a, int b)
+if (numberA > 0 && powB > 0)
+{
+    Console.WriteLine($"основание - {numberA}, степень - {powB}, result: {Pow(numberA, powB)}");
+}
+else
+{
+    Console.WriteLine("Ошибка ввода данных");
+}
+
+int Pow(int a, int b)
 {
     int res = 1;
-    while (b>0)
+    while (b > 0)
     {
         res *= a;
         b--;
