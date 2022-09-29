@@ -9,7 +9,7 @@ Console.WriteLine("Задайте размер массива: ");
 int size = Convert.ToInt32(Console.ReadLine());
 double[] myArr = GetRandomArray(size, 1, 100);
 PrintArray(myArr);
-Console.WriteLine($" -> {Math.Round(GetMaxDouble(myArr) - GetMinDouble(myArr), 2)}");
+Console.WriteLine($" -> {Math.Round(GetMaxDouble(myArr) - GetMinDouble(myArr), 1)}");
 
 
 // Генератор массива вещественных чисел заданной размерности
@@ -19,7 +19,7 @@ double[] GetRandomArray(int size, int min, int max)
     double[] arr = new double[size];
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 2);
+        arr[i] = Math.Round(rnd.NextDouble() * (max - min) + min, 1);
     }
     return arr;
 }
