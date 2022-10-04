@@ -5,20 +5,22 @@
 
 Console.WriteLine("Введите данные: ");
 Console.Write("b1: ");
-int b1 = Convert.ToInt32(Console.ReadLine());
+double b1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("k1: ");
-int k1 = Convert.ToInt32(Console.ReadLine());
+double k1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("b2: ");
-int b2 = Convert.ToInt32(Console.ReadLine());
+double b2 = Convert.ToInt32(Console.ReadLine());
 Console.Write("k2: ");
-int k2 = Convert.ToInt32(Console.ReadLine());
+double k2 = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine($"b1={b1}, k1={k1}, b2={b2}, k2={k2}");
 double[] intPoint = IntersectionPoint(b1, k1, b2, k2);
 
-double[] IntersectionPoint(int b1, int k1, int b2, int k2)
+double[] IntersectionPoint(double b1, double k1, double b2, double k2)
 {
     double x, y;
+    Console.WriteLine($"числитель = {b2 - b1}");
+    Console.WriteLine($"знаменатель = {k1 - k2}");
     x = (b2 - b1) / (k1 - k2);
     y = k1 * x + b1;
     double[] point = new double[2] {x, y};
