@@ -19,8 +19,6 @@ double[] intPoint = IntersectionPoint(b1, k1, b2, k2);
 double[] IntersectionPoint(double b1, double k1, double b2, double k2)
 {
     double x, y;
-    Console.WriteLine($"числитель = {b2 - b1}");
-    Console.WriteLine($"знаменатель = {k1 - k2}");
     x = (b2 - b1) / (k1 - k2);
     y = k1 * x + b1;
     double[] point = new double[2] {x, y};
