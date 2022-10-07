@@ -34,31 +34,26 @@ void Print2DArray(int[,] arr)
 
 void PrintArray(double[] array)
 {
-    Console.Write("[ ");
-    for (int i = 0; i < array.Length; i++)
-    {
-        if (i == array.Length - 1) Console.Write($"{array[i]}");
-        else Console.Write($"{array[i]}, ");
-    }
-    Console.Write(" ]");
+    foreach (double item in array) Console.Write($"{item} ");
 }
 
 int[,] myArr = Create2DArray(3, 4);
 Print2DArray(myArr);
-double[] myAverage = AverageOfArrayColumns(myArr);
+double[] myAverage = AverageOfColumnsInArray(myArr);
+Console.Write("Среднее арифметическое каждого столбца: ");
 PrintArray(myAverage);
 
-double[] AverageOfArrayColumns(int[,] arr)
+double[] AverageOfColumnsInArray(int[,] arr)
 {
     double[] res = new double[arr.GetLength(1)];
     for (int i = 0; i < arr.GetLength(1); i++)
     {
-        int sum = 0;
+        double sum = 0;
         for (int j = 0; j < arr.GetLength(0); j++)
         {
             sum += arr [j, i];  
         }
-        res[i] = sum / arr.GetLength(0);
+        res[i] = Math.Round(sum / arr.GetLength(0), 1, MidpointRounding.ToZero);
     }
     return res;
 }
