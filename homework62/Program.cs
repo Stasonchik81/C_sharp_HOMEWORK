@@ -60,7 +60,8 @@ string input = Console.ReadLine();
 int[] coordinates = input.Split(' ').Select(int.Parse).ToArray();
 PrintArray(coordinates);
 
-if (coordinates[0] > myArray.GetLength(0) || coordinates[1] > myArray.GetLength(1))
+if (coordinates[0] > myArray.GetLength(0) || 
+    coordinates[1] > myArray.GetLength(1))
     Console.Write(" Такого числа в массиве нет");
 else Console.Write($" -> {GetElementOfArray(myArray, coordinates[0], coordinates[1])}");
 
